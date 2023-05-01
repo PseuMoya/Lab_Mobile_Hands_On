@@ -14,32 +14,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Perry Andre' B. Moya BSIT 3.2a
-        //Buttons
+        //Buttons and Edit Texts
         Button compareBtn = (Button) findViewById(R.id.btnCompare);
         Button swapBtn = (Button) findViewById(R.id.btnSwap);
-
+        EditText e_1 = (EditText) findViewById(R.id.e1);
+        EditText e_2 = (EditText) findViewById(R.id.e2);
         //SWAP_BUTTON
         swapBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                EditText s_e_1 = (EditText) findViewById(R.id.e1);
-                EditText s_e_2 = (EditText) findViewById(R.id.e2);
-
                 //OL' SWITCHEROO
-                String switcheroo = s_e_1.getText().toString();
-                s_e_1.setText(s_e_2.getText().toString());
-                s_e_2.setText(switcheroo);
+                String switcheroo = e_1.getText().toString();
+                e_1.setText(e_2.getText().toString());
+                e_2.setText(switcheroo);
             }
         });
         //COMPARE_BUTTON
         compareBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                EditText c_e_1 = (EditText) findViewById(R.id.e1);
-                EditText c_e_2 = (EditText) findViewById(R.id.e2);
-
-                String t_1 = c_e_1.getText().toString();
-                String t_2 = c_e_2.getText().toString();
+                
+                String t_1 = e_1.getText().toString();
+                String t_2 = e_2.getText().toString();
 
                 Intent intent = new Intent(MainActivity.this, Act2.class);
 
